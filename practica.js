@@ -89,3 +89,50 @@ function obtenerMaximo(arreglo) {
     return maximo;
 }
 console.log(obtenerMaximo([3, 5, 2, 9, 1]));  
+
+//Objetos
+//1
+var producto = {
+  nombre: "Tomate",
+  precio: 20,
+  cantidad: 3
+};
+
+function calcularTotal(producto) {
+  return producto.precio * producto.cantidad;
+}
+
+console.log(calcularTotal(producto));
+
+//2
+var persona = {
+  nombre: "Juan",
+  edad: 25,
+  profesion: "Ingeniero"
+};
+function presentarPersona(persona) {
+  console.log("Nombre: " + persona.nombre);
+  console.log("Edad: " + persona.edad);
+  console.log("Profesión: " + persona.profesion);
+}
+presentarPersona(persona);
+
+//3
+function esMayorEdad(persona) {
+  return persona.edad >= 18;
+}
+var persona12 = {
+  nombre: "Juan",
+  edad: 25,
+  profesion: "Ingeniero"
+};
+var persona13 = {
+  nombre: "Natali",
+  edad: 17,
+  profesion: "Estudiante"
+};
+console.log(esMayorEdad(persona12));
+console.log(esMayorEdad(persona13));
+
+
+
