@@ -134,5 +134,86 @@ var persona13 = {
 console.log(esMayorEdad(persona12));
 console.log(esMayorEdad(persona13));
 
+//Ejercicios utilizando Funciones, Arreglos y Objetos
+//1)
+function verificarNumero() {
+  var numero = number(prompt("Ingrese un número:"));
+
+  if (numero > 0) {
+    return "El número es positivo";
+  } else if (numero < 0) {
+    return "El número es negativo";
+  } else {
+    return "El número es 0";
+  }
+}
+var resultado = verificarNumero();
+console.log(resultado);
+
+//2)
+function esPrimo(numero) {
+  //Verificacion de si es un numero menor que 1 o no
+  if (numero <= 1) {
+    return false;
+  }
+  //verificación de si el numero es divisible por algun numero distinto de 1 y de si mismo
+  for (var i = 2; i < numero; i++) {
+    if (numero % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+var numero = Number(prompt("Ingrese un número:"));
+
+if (esPrimo(numero)) {
+  console.log("El número es primo");
+} else {
+  console.log("El número no es primo");
+}
+
+//3)
+function convertirTemperatura(temperatura, unidad) {
+  if (unidad === 'celsius') {
+    return (temperatura * 9/5) + 32;
+  } else if (unidad === 'fahrenheit') {
+    return (temperatura - 32) * 5/9;
+  } else {
+    return 'La unidad que acabó de ingresar no es válida.';
+  }
+}
+var temperatura = Number(prompt('Ingrese la temperatura:'));
+var unidadOrigen = prompt('Ingrese la unidad que va a convertir (celsius o fahrenheit):');
+var unidadDestino = prompt('Ingrese la unidad que va a mostrar (celsius o fahrenheit):');
+var tempConvertida = convertirTemperatura(temperatura, unidadOrigen);
+if (typeof tempConvertida === 'number') {
+  console.log('La temperatura convertida es:', tempConvertida, unidadDestino);
+} else {
+  console.log(tempConvertida);
+}
+
+//4)
+function calcularTotalCompra() {
+  var precios = [];
+  var precioxProducto;
+  var total = 0;
+  while (true) {
+    precioxProducto = prompt("Ingrese el precio del producto (o ingrese 'total' para obtener el total de la compra):");
+    if (precioxProducto.toLowerCase() === "total") {
+      break;
+    }
+    precioxProducto = parseFloat(precioxProducto);
+    if (!isNaN(precioxProducto)) {
+      precios.push(precioxProducto);
+      total += precioxProducto;
+    } else {
+      console.log("Precio invalido. Ingrese un número válido.");
+    }
+  }
+  return total;
+}
+var totalCompra = calcularTotalCompra();
+console.log("El total de la compra es:", totalCompra);
+
 
 
